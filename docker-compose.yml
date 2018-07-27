@@ -1,0 +1,36 @@
+version: "3.3"
+services:
+    ffbo.processor:
+        container_name: ffbo.processor
+        image: jonmarty/ffbo.processor
+        ports: ["8081:8081", "8082:8082"]
+        tty: true
+        volumes:
+            - type: bind
+              source: .
+              target: /config
+        networks:
+            - ffbonet
+    ffbo.nlp_component:
+        container_name: ffbo.nlp_component
+        image: jonmarty/ffbo.nlp_component
+        tty: true
+        volumes:
+            - type: bind
+              source: .
+              target: /config
+        networks:
+            - ffbonet
+    ffbo.neuroarch_component:
+        container_name: ffbo.neuroarch_component
+        image: jonmarty/ffbo.neuroarch_component
+        tty: true
+        volumes:
+            - type: bind
+              source: .
+              target: /config
+        networks:
+            - ffbonet
+networks:
+    ffbonet:
+        external: true
