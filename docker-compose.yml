@@ -33,4 +33,4 @@ services:
             - ffbonet
 networks:
     ffbonet:
-        external: true
+        driver: bridge
