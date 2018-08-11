@@ -1,4 +1,5 @@
-﻿# FFBO Architecture
+# FFBO Compose
+## FFBO Architecture
 
 This repository consists of a set of tools that can be used to automate installation and execution of FFBO Architecture components. Components supported under this framework are:
 * Processor - Coordinates other FFBO components, aggregates and processes their outputs, and runs a web interface
