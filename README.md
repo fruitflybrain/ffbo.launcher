@@ -10,6 +10,13 @@ This repository consists of a set of tools that can be used to automate installa
 
 Docker Compose is a tool that simplifies the setup and operation of multi-container applications. Users enter their desired configuration, consisting of services (i.e. web servers, databaseses), networks, and volumes (shared directories between hosts and containers and between containers). On the command line, Docker Compose reads this configuration from a docker-compose.yml file and automatically sets up and manages the specified images, containers, networks, and volumes.
 
+## General Notes
+
+- All docker related commands should be run with sudo privileges, or with administrator mode. Without sudo access, Docker commands cannot access the local Docker daemon.
+- The following packages will need to be installed on your computer to run this software
+  - Docker
+  - Docker Compose
+
 ## Installation
 
 This repository utilizes prebuilt images from Docker Hub. Before running the application, you should pull the required images for each service. This can be done for all services with
