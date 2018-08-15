@@ -3,7 +3,15 @@ services:
     ffbo.processor:
         container_name: ffbo.processor
         image: jonmarty/ffbo.processor
-        ports: ["8081:8081", "8082:8082"]
+        ports: 
+            - target: 8081
+              published: 8081
+              protocol: tcp
+              mode: host
+            - target: 8082
+              published: 8082
+              protocol: tcp
+              mode: host
         tty: true
         volumes:
             - type: bind
@@ -24,6 +32,16 @@ services:
     ffbo.neuroarch_component:
         container_name: ffbo.neuroarch_component
         image: jonmarty/ffbo.neuroarch_component
+        tty: true
+        volumes:
+            - type: bind
+              source: .
+              target: /config
+        networks:
+            - ffbonet
+    ffbo.neurokernel_component:
+        container_name: ffbo.neurokernel_component
+        image: jonmarty/ffbo.neurokernel_component
         tty: true
         volumes:
             - type: bind

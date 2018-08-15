@@ -26,7 +26,15 @@ This repository utilizes prebuilt images from Docker Hub. Before running the app
 and for specific services using
     
     docker-compose pull [SERVICE]
-    
+
+## Setup
+
+If you intend to run the ffbo.neurokernel_component service, you will need to install the nvidia-container-runtime, which interfaces between Docker and GPUs on the host machine, and set it as the default Docker runtime. This can be done on Debian-based linux systems using:
+
+    sh setup_gpu.sh
+
+For more information, see [https://github.com/nvidia/nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime).
+
 ## Execution
 
 __NOTE__ Execution of ffbo.compose requires the mounting of volumes, certain OSs require the user to specify which volumes can be mounted. If you have one of these OSs, please add this directory to the allowed volumes:
