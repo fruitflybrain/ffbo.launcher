@@ -1,21 +1,33 @@
-# FFBO Compose
+# FFBO Launcher
+
+This repository consists of a set of tools that can be used to automate installation and launch components required by the two FFBO standalone services:
+* [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
+* [NeuroGFX](https://neurogfx.fruitflybrain.org): a graphical functional explorer for fruit fly brain circuit design and execution.
+
 ## FFBO Architecture
 
-This repository consists of a set of tools that can be used to automate installation and execution of FFBO Architecture components. Components supported under this framework are:
-* Processor - Coordinates other FFBO components, aggregates and processes their outputs, and runs a web interface
-* NeuroArch Database - Stores neurophysiological data, is queried by Processor
-* Natural Language Processing (NLP) Component - Processes natural language queries make through Processor to structured queries that can be used on NeuroArch Database
+The components in the backend of the FFBO architecture supported under this framework are:
+* [Processor](https://github.com/fruitflybrain/ffbo.processor) - A central processor that routers messages between FFBO components and hosts web services.
+* [NeuroArch Component](https://github.com/fruitflybrain/ffbo.neuroarch_component) - Component that hosts a NeuroArch Database where fly brain data are stored.
+* [Natural Language Processing (NLP) Component](https://github.com/fruitflybrain/ffbo.nlp_component) - Component that processes natural language queries into structured queries that can be used on NeuroArch Database
+* [Neurokernel Component](https://github.com/fruitflybrain/ffbo.neurokernel_component) - Component that executes fly brain circuit.
 
-## Docker Compose
+## Docker Containerization and their Launching
 
-Docker Compose is a tool that simplifies the setup and operation of multi-container applications. Users enter their desired configuration, consisting of services (i.e. web servers, databaseses), networks, and volumes (shared directories between hosts and containers and between containers). On the command line, Docker Compose reads this configuration from a docker-compose.yml file and automatically sets up and manages the specified images, containers, networks, and volumes.
+Each of the components is hosted in a [docker](https://docker.com) container. This repository uses
+[Docker Compose](https://docs.docker.com/compose) as a tool to simplify the setup and maintenance of multi-container applications.
+A config.ini file allows user to enter their desired configuration for the FFBO services (such as IP, port and password, etc).
 
-## General Notes
+## Requirements
 
-- All docker related commands should be run with sudo privileges, or with administrator mode. Without sudo access, Docker commands cannot access the local Docker daemon.
+- System Requirements
+  - At least 8 GB of memory
+  - A CUDA enabled GPU, if NeuroGFX is needed.
+  - OS: Linux (recommended), Mac and Windows (only supports NeuroNLP)
+
 - The following packages will need to be installed on your computer to run this software
-  - Docker
-  - Docker Compose
+  - [Docker](https://docs.docker.com/install/)
+  - [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Installation
 
