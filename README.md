@@ -4,6 +4,8 @@ This repository consists of a set of tools that can be used to automate installa
 * [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
 * [NeuroGFX](https://neurogfx.fruitflybrain.org): a graphical functional explorer for fruit fly brain circuit design and execution.
 
+__NOTE__ For specific notes, see the [wiki](https://github.com/fruitflybrain/ffbo.launcher/wiki)
+
 ## FFBO Architecture
 
 The components in the backend of the FFBO architecture supported under this framework are:
@@ -12,7 +14,7 @@ The components in the backend of the FFBO architecture supported under this fram
 * [Natural Language Processing (NLP) Component](https://github.com/fruitflybrain/ffbo.nlp_component) - Component that processes natural language queries into structured queries that can be used on NeuroArch Database
 * [Neurokernel Component](https://github.com/fruitflybrain/ffbo.neurokernel_component) - Component that executes fly brain circuit.
 
-## Docker Containerization and their Launching
+## Docker Containerization and Launching
 
 Each of the components is hosted in a [docker](https://docker.com) container. This repository uses
 [Docker Compose](https://docs.docker.com/compose) as a tool to simplify the setup and maintenance of multi-container applications.
