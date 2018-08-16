@@ -31,6 +31,20 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
   - [Docker](https://docs.docker.com/install/)
   - [Docker Compose](https://docs.docker.com/compose/install/)
 
+## Setup
+
+If you intend to run the ffbo.neurokernel_component service, you will need to install the nvidia-container-runtime, which interfaces between Docker and GPUs on the host machine, and set it as the default Docker runtime. This can be done on Ubuntu using:
+
+    sh setup-gpu-ubuntu.sh
+
+For more information, see [https://github.com/nvidia/nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime).
+
+## Configuration
+
+__NOTE__ When changing the port configuration, please make sure to change the exposed ports ("ports" under the relevant service) to match the configuration
+
+To configure components, edit the ./config.ini file found in the main directory of this repository. Details on config file elements is provided through comments within the ./config.ini file
+
 ## Installation
 
 This repository utilizes prebuilt images from Docker Hub. Before running the application, you should pull the required images for each service. This can be done for all services with
@@ -40,14 +54,6 @@ This repository utilizes prebuilt images from Docker Hub. Before running the app
 and for specific services using
     
     docker-compose pull [SERVICE]
-
-## Setup
-
-If you intend to run the ffbo.neurokernel_component service, you will need to install the nvidia-container-runtime, which interfaces between Docker and GPUs on the host machine, and set it as the default Docker runtime. This can be done on Debian-based linux systems using:
-
-    sh setup_gpu.sh
-
-For more information, see [https://github.com/nvidia/nvidia-container-runtime](https://github.com/nvidia/nvidia-container-runtime).
 
 ## Execution
 
@@ -77,9 +83,3 @@ This can be done for specific services using
 Restarting a Docker container running a service can be done with
     
     docker-compose restart [SERVICE]
-    
-## Configuration
-
-__NOTE__ When changing the port configuration, please make sure to change the exposed ports ("ports" under the relevant service) to match the configuration
-
-To configure components, edit the ./config.ini file found in the main directory of this repository. Details on config file elements is provided through comments within the ./config.ini file
