@@ -93,7 +93,7 @@ To stop specific services:
     
 Stopping services do not remove containers. 
 
-#### Start Stopped Services
+#### Starting Stopped Services
 
 To start stopped services or existing containers:
     
@@ -103,7 +103,7 @@ This command stops services but does not remove their containers.
 This will be important if you wish to keep using the container
 in which new information is added, such as tags in NeuroNLP.
 
-#### Restart Services
+#### Restarting Services
 
 To restart running or stopped services:
     
@@ -122,7 +122,7 @@ To stop and remove specific services:
 This removes all containers. Anything stored in a service (such as tags in NeuroNLP)
 will no longer accessed or recovered.
 
-#### Display Log from Services
+#### Displaying Log from Services
 To display log output from services:
     
     docker-compose log [SERVICE...]
