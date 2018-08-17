@@ -4,8 +4,6 @@ This repository consists of a set of tools that can be used to automate installa
 * [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
 * [NeuroGFX](https://neurogfx.fruitflybrain.org): a graphical functional explorer for fruit fly brain circuit design and execution.
 
-__NOTE__ For specific notes, see the [wiki](https://github.com/fruitflybrain/ffbo.launcher/wiki)
-
 ## FFBO Architecture
 
 The components in the backend of the FFBO architecture supported under this framework are:
@@ -67,7 +65,7 @@ This section provides further documentation on installation, setup, and executio
 
 ## Quick Start
 
-This section is a basic guide to navigating 
+This section is a basic guide to installing dependencies, attaching Docker to GPU, and launching the application. For further details, refer to the "Documentation" section.
 
 ### Installation
 
