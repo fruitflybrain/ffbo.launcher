@@ -1,6 +1,6 @@
 # FFBO Launcher
 
-This repository consists of a set of tools that can be used to automate installation and launch components required by the two FFBO standalone tools:
+This repository consists of a set of tools that can be used to automate installation and launch components required by the two standalone tools of the [Fruit Fly Brain Observatory](http://fruitflybrain.org) (FFBO):
 * [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
 * [NeuroGFX](https://neurogfx.fruitflybrain.org): a graphical functional explorer for fruit fly brain circuit design and execution.
 
