@@ -7,7 +7,7 @@ This repository consists of a set of tools that can be used to automate installa
 #### FFBO Architecture
 
 The components in the backend of the FFBO architecture supported under this framework are:
-* [Processor](https://github.com/fruitflybrain/ffbo.processor) - A central processor that routers messages between FFBO components and hosts web services.
+* [Processor](https://github.com/fruitflybrain/ffbo.processor) - A central processor that routes messages between FFBO components and hosts web services.
 * [NeuroArch Component](https://github.com/fruitflybrain/ffbo.neuroarch_component) - Component that hosts a NeuroArch Database where fly brain data are stored.
 * [Natural Language Processing (NLP) Component](https://github.com/fruitflybrain/ffbo.nlp_component) - Component that processes natural language queries into structured queries that can be used on NeuroArch Database
 * [Neurokernel Component](https://github.com/fruitflybrain/ffbo.neurokernel_component) - Component that executes fly brain circuit.
