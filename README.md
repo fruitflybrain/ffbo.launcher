@@ -77,9 +77,9 @@ Once all services created, wait for 1 minute. Then, you can start using
 - NeuroGFX at: http://localhost:8082
 
 If you are not running services on your localhost, replace "localhost" with
-the IP of the machine running the ffbo.processor service. 
+the IP of the machine that you are running the (ffbo.processor) service.
 For example, if you are running on an Amazon Web Service EC2 instance, 
-repace "localhost" with the *public* IP of the instance.
+replace "localhost" with the *public* IP of the instance.
 
 #### Stopping Services
 
