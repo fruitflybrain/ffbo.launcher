@@ -139,7 +139,7 @@ Please refer to our Wiki pages for more advance machine setup:
 
 ## <a name="requirement_install"></a>Prerequisites Installation
 
-This section provides documentation on installation and setup required software, and provide helpful links.
+This section provides documentation on installation and setup for required software, and provides helpful links.
 
 ### Install Docker
 
