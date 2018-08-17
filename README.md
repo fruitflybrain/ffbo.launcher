@@ -31,7 +31,8 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
 - Additional requirement to run NeuroGFX
   - [NVIDIA GPU Driver](https://www.nvidia.com/drivers)
   - [NVIDIA Container Runtime](https://github.com/NVIDIA/nvidia-container-runtime)
-
+- To launch applications on Amazon Web Services (AWS) EC2 instances:
+  - An Amazon Machine Image is provided. Details can be found under this [guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-on-an-AWS-instance).
 
 ## Basic Usage
 
