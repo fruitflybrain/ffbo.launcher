@@ -73,13 +73,13 @@ To run services in the background and suppress outputs:
     docker-compose up -d
     
 Once all services created, wait for 1 minute. Then, you can start using
-- NeuroNLP at: http://machine-ip:8081
-- NeuroGFX at: http://machine-ip:8082
+- NeuroNLP at: http://localhost:8081
+- NeuroGFX at: http://localhost:8082
 
-where "machine-ip" is the IP of the machine running the ffbo.processor service.
-If you are running the services on your localhost, "machine-ip" can be simply
-"localhost". If you are running on an Amazon Web Service EC2 instance, 
-"machine-ip" is the *public* IP of the instance.
+If you are not running services on your localhost, replace "localhost" with
+the IP of the machine running the ffbo.processor service. 
+For example, if you are running on an Amazon Web Service EC2 instance, 
+repace "localhost" with the *public* IP of the instance.
 
 #### Stopping Services
 
@@ -131,15 +131,15 @@ To display log output from services:
 ## Advanced Usage
 Please refer to our Wiki pages for more advance machine setup:
 -  Local
-   -  [Single Computer](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-a-Single-Local-Computer)
-   -  [Multiple Computers](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-Multiple-Local-Computers)
--  AWS
-   -  [Single Computer]()
-   -  [Multiple Computer]()
+   -  [Running All Services on a Single Machine](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-a-Single-Local-Computer)
+   -  [Running Services on Multiple Machines](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-Multiple-Local-Computers)
+-  Amazon Web Services (Using Amazon Machine Images)
+   -  [Running All Services on a Single EC2 Instance]()
+   -  [Running Services on Multiple EC2 Instances]()
 
 ## <a name="requirement_install"></a>Prerequisites Installation
 
-This section provides further documentation on installation, setup, and execution for this repository beyond what is covered in the "Quick Start" section, as well as helpful links.
+This section provides documentation on installation and setup required software, and provide helpful links.
 
 ### Install Docker
 
