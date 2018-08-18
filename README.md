@@ -32,7 +32,7 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
   - [NVIDIA GPU Driver](https://www.nvidia.com/drivers)
   - [NVIDIA Container Runtime](https://github.com/NVIDIA/nvidia-container-runtime)
 - To launch applications on Amazon Web Services (AWS) EC2 instances:
-  - An Amazon Machine Image is provided. Details can be found under this [guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-on-an-AWS-instance).
+  - An Amazon Machine Image is provided. Details can be found under this [guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance).
 
 ## Basic Usage
 
@@ -132,11 +132,11 @@ To display log output from services:
 ## Advanced Usage
 Please refer to our Wiki pages for more advance machine setup:
 -  Local
-   -  [Running All Services on a Single Machine](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-a-Single-Local-Computer)
-   -  [Running Services on Multiple Machines](https://github.com/fruitflybrain/ffbo.launcher/wiki/Execution-on-Multiple-Local-Computers)
+   -  [Running All Services on a Single Machine](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Machine)
+   -  [Running Services on Multiple Machines](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-Machines)
 -  Amazon Web Services (Using Amazon Machine Images)
-   -  [Running All Services on a Single EC2 Instance]()
-   -  [Running Services on Multiple EC2 Instances]()
+   -  [Running All Services on a Single EC2 Instance](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance)
+   -  [Running Services on Multiple EC2 Instances](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-EC2-Instances)
 
 ## <a name="requirement_install"></a>Prerequisites Installation
 
