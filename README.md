@@ -60,7 +60,7 @@ The entire set of images is about 12 GB, so depending on your network speed,
 it will take some time to download all of them.
 Once they are done, you should find the following 4 docker images in your system.
 
-![alt text](https://cdn.rawgit.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
+![result of `docker-compose pull`](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
 
 You can also use this command to update to the latest docker images on Docker Hub.
 
@@ -91,7 +91,7 @@ replace "localhost" with the *public* IP of the instance.
 If the system is properly started, you should see "nlp", "nk" and "na" servers fully
 populated with a number and name, similar to the following:
 
-![alt text](https://cdn.rawgit.com/fruitflybrain/ffbo.launcher/images/images/up.jpg "result of `docker-compose up`")
+!["result of `docker-compose up`"](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/up.jpg "result of `docker-compose up`")
 
 If you encounter any problems launching or using the services, please check out
 [Troubleshooting](https://github.com/fruitflybrain/ffbo.launcher/wiki/Troubleshooting).
