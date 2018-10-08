@@ -49,3 +49,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo Test the installation, should be version $DOCKER_COMPOSE_VERSION
 docker-compose --version
+
+# ADD the user to docker group to allow user to execute docker command without sudo.
+# For details on how this impacts security in your system, see:
+# https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
+echo Adding user to docker group so you don't need sudo to execute docker command
+echo For details on how this impacts security in your system, see:
+echo https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
+sudo usermod -aG docker $USER
