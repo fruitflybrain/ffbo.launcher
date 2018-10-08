@@ -56,6 +56,12 @@ and for specific services using
     
     docker-compose pull [SERVICE...]
     
+The entire set of images is about 12 GB, so depending on your network speed,
+it will take some time to download all of them.
+Once they are done, you should find the following 4 docker images in your system.
+
+![alt text](https://cdn.rawgit.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
+
 You can also use this command to update to the latest docker images on Docker Hub.
 
 #### Starting Services
@@ -81,6 +87,14 @@ If you are not running services on your localhost, replace "localhost" with
 the IP of the machine that you are running the (ffbo.processor) service.
 For example, if you are running on an Amazon Web Service EC2 instance, 
 replace "localhost" with the *public* IP of the instance.
+
+If the system is properly started, you should see "nlp", "nk" and "na" servers fully
+populated with a number and name, similar to the following:
+
+![alt text](https://cdn.rawgit.com/fruitflybrain/ffbo.launcher/images/images/up.jpg "result of `docker-compose up`")
+
+If you encounter any problems launching or using the services, please check out
+[Troubleshooting](https://github.com/fruitflybrain/ffbo.launcher/wiki/Troubleshooting).
 
 #### Stopping Services
 
@@ -126,7 +140,7 @@ will no longer accessed or recovered.
 #### Displaying Log from Services
 To display log output from services:
     
-    docker-compose log [SERVICE...]
+    docker-compose logs [SERVICE...]
     
 
 ## Advanced Usage
