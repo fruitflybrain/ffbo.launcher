@@ -29,7 +29,7 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
   - [Docker](https://docs.docker.com/install/)
   - [Docker Compose](https://docs.docker.com/compose/install/)
 - Additional requirement to run NeuroGFX
-  - [NVIDIA GPU Driver](https://www.nvidia.com/drivers)
+  - [NVIDIA GPU Driver](https://www.nvidia.com/drivers) Version 384 or up
   - [NVIDIA Container Runtime](https://github.com/NVIDIA/nvidia-container-runtime)
 - To launch applications on Amazon Web Services (AWS) EC2 instances:
   - An Amazon Machine Image is provided. Details can be found under this [guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance).
@@ -38,6 +38,13 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
 
 Assuming that you have the prerequisites installed, we cover here the basic usage for
 the case when services run on a single machine with default configuration. 
+
+#### Cloning This Repository
+
+The first step to install FFBO is to clone this repository to the machine(s) where you will run FFBO.
+We will utilize `docker-compose.yml` in this repository to automatically pull down all docker images from [Docker Hub](https://hub.docker.com/r/fruitflybrain/).
+
+If you are using the provided Amazon Machine Image on AWS EC2, the repository has already been clone. Please pull the latest version in order to stay updated.
 
 #### Service Names
 Here, the name of the services are
