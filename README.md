@@ -192,3 +192,6 @@ This section provides documentation on installation and setup for required softw
 - Mac ([NVIDIA Runtime](https://github.com/NVIDIA/nvidia-container-runtime) has no support for MacOS)
 <!--- Windows ([NVIDIA Runtime](https://github.com/NVIDIA/nvidia-container-runtime) has no support for Windows)-->
 
+
+## Licenses of Data in FFBO
+Additional licenses and acknowledgements for data used in FFBO can be found [here](http://fruitflybrain.org/licenses.html).
