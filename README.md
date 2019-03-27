@@ -21,13 +21,13 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
 ## Requirements
 
 - System Requirements
-  - At least 8 GB of memory (16 or more recommended)
+  - At least 8 GB of memory (16 GB or more recommended)
   - A CUDA enabled GPU, if NeuroGFX is needed.
   - OS: Linux (recommended) and Mac (only supports NeuroNLP)
 
 - The following will need to be installed on your computer to run this software (see [Prerequisites Installation](#requirement_install) below if you don't have them installed) 
-  - [Docker](https://docs.docker.com/install/)
-  - [Docker Compose](https://docs.docker.com/compose/install/)
+  - [Docker](https://docs.docker.com/install/) (17.12.0-ce and up tested on Ubuntu 16.04 and MacOS 10.13)
+  - [Docker Compose](https://docs.docker.com/compose/install/) (1.22.0 and up tested on Ubuntu 16.04 and MacOS 10.13)
 - Additional requirement to run NeuroGFX
   - [NVIDIA GPU Driver](https://www.nvidia.com/drivers) Version 384 or up
   - [NVIDIA Container Runtime](https://github.com/NVIDIA/nvidia-container-runtime)
@@ -37,7 +37,8 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
 ## Basic Usage
 
 Assuming that you have the prerequisites installed, we cover here the basic usage for
-the case when services run on a single machine with default configuration. 
+the case when services run on a single machine with default configuration.
+The typical install time is approximately the time for your computer to download 12 GB of docker images.
 
 #### Cloning This Repository
 
@@ -87,8 +88,8 @@ To run services in the background and suppress outputs:
     docker-compose up -d
     
 Once all services created, wait for 1 minute. Then, you can start using
-- NeuroNLP at: http://localhost:8081
-- NeuroGFX at: http://localhost:8082
+- NeuroNLP at: http://localhost:8081 (You can expect the same website as https://neuronlp.fruitflybrain.org. A list of demos can be launched by Get Started -> Demos.)
+- NeuroGFX at: http://localhost:8082 (You can expect the same website as https://neurogfx.fruitflybrain.org. A tutorial video is available by clicking NeuroGFX on the top left.)
 
 If you are not running services on your localhost, replace "localhost" with
 the IP of the machine that you are running the (ffbo.processor) service.
