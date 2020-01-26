@@ -41,7 +41,7 @@ services:
             - ffbonet
     ffbo.neurokernel_component:
         container_name: ffbo.neurokernel_component
-        image: fruitflybrain/ffbo.neurokernel_component:hemibrain
+        image: fruitflybrain/ffbo.neurokernel_component
         tty: true
         volumes:
             - type: bind
