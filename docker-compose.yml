@@ -2,8 +2,8 @@ version: "3.3"
 services:
     ffbo.processor:
         container_name: ffbo.processor
-        image: fruitflybrain/ffbo.processor
-        ports: 
+        image: fruitflybrain/ffbo.processor:hemibrain
+        ports:
             - target: 8081
               published: 8081
               protocol: tcp
@@ -21,7 +21,7 @@ services:
             - ffbonet
     ffbo.nlp_component:
         container_name: ffbo.nlp_component
-        image: fruitflybrain/ffbo.nlp_component
+        image: fruitflybrain/ffbo.nlp_component:hemibrain
         tty: true
         volumes:
             - type: bind
@@ -31,7 +31,7 @@ services:
             - ffbonet
     ffbo.neuroarch_component:
         container_name: ffbo.neuroarch_component
-        image: fruitflybrain/ffbo.neuroarch_component
+        image: fruitflybrain/ffbo.neuroarch_component:hemibrain
         tty: true
         volumes:
             - type: bind
@@ -41,7 +41,7 @@ services:
             - ffbonet
     ffbo.neurokernel_component:
         container_name: ffbo.neurokernel_component
-        image: fruitflybrain/ffbo.neurokernel_component
+        image: fruitflybrain/ffbo.neurokernel_component:hemibrain
         tty: true
         volumes:
             - type: bind
