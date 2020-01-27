@@ -41,16 +41,6 @@ services:
             - ffbonet
         environment:
             - ORIENTDB_OPTS_MEMORY=-Xms16G -Xmx16G
-    ffbo.neurokernel_component:
-        container_name: ffbo.neurokernel_component
-        image: fruitflybrain/ffbo.neurokernel_component
-        tty: true
-        volumes:
-            - type: bind
-              source: .
-              target: /config
-        networks:
-            - ffbonet
 networks:
     ffbonet:
         driver: bridge
