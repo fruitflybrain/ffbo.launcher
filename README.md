@@ -62,7 +62,7 @@ and for specific services using
     
 The entire set of images is about 30 GB, so depending on your network speed,
 it will take some time to download all of them.
-Once they are done, you should find the following 3 docker images in your system.
+Once they are done, you should find the following 3 docker images in your system (ignore "ffbo.neurokernel" image).
 
 ![result of `docker-compose pull`](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
 
@@ -92,7 +92,7 @@ For example, if you are running on an Amazon Web Service EC2 instance,
 replace "localhost" with the *public* IP of the instance.
 
 If the system is properly started, you should see "nlp", and "na" servers fully
-populated with a number and name, similar to the following:
+populated with a number and name, similar to the following (ignore "nk" below):
 
 !["result of `docker-compose up`"](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/up.jpg "result of `docker-compose up`")
 
