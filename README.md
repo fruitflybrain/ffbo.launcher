@@ -1,8 +1,7 @@
-# FFBO Launcher
+# FFBO Launcher for [Hemibrain-v1.0](https://www.janelia.org/project-team/flyem/hemibrain)
 
-This repository consists of a set of tools that can be used to automate installation and launch components required by the two standalone tools of the [Fruit Fly Brain Observatory](http://fruitflybrain.org) (FFBO):
+This repository consists of a set of tools that can be used to automate installation and launch components required by the standalone tools of the [Fruit Fly Brain Observatory](http://fruitflybrain.org) (FFBO):
 * [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
-* [NeuroGFX](https://neurogfx.fruitflybrain.org): a graphical functional explorer for fruit fly brain circuit design and execution.
 
 #### FFBO Architecture
 
@@ -10,7 +9,6 @@ The components in the backend of the FFBO architecture supported under this fram
 * [Processor](https://github.com/fruitflybrain/ffbo.processor) - A central processor that routes messages between FFBO components and hosts web services.
 * [NeuroArch Component](https://github.com/fruitflybrain/ffbo.neuroarch_component) - A component that hosts a NeuroArch Database where fly brain data are stored.
 * [Natural Language Processing (NLP) Component](https://github.com/fruitflybrain/ffbo.nlp_component) - A component that processes natural language queries into structured queries that can be used on NeuroArch Database
-* [Neurokernel Component](https://github.com/fruitflybrain/ffbo.neurokernel_component) - A component that executes fly brain circuit.
 
 #### Docker Containerization and Launching
 
@@ -21,16 +19,13 @@ A config.ini file allows user to enter their desired configuration for the FFBO 
 ## Requirements
 
 - System Requirements
-  - At least 8 GB of memory (16 GB or more recommended)
-  - A CUDA enabled GPU, if NeuroGFX is needed.
-  - OS: Linux (recommended) and Mac (only supports NeuroNLP)
+  - At least 16 GB of memory (32 GB or more recommended)
+  - OS: Linux (recommended) and Mac
+  - Disk: A high performance disk is required for stable function, NVMe SSD is recommended to host Docker images (to change the Docker folder on your machine, follow [this post](https://medium.com/developer-space/how-to-change-docker-data-folder-configuration-33d372669056), for example.
 
 - The following will need to be installed on your computer to run this software (see [Prerequisites Installation](#requirement_install) below if you don't have them installed) 
   - [Docker](https://docs.docker.com/install/) (17.12.0-ce and up tested on Ubuntu 16.04 and MacOS 10.13)
   - [Docker Compose](https://docs.docker.com/compose/install/) (1.22.0 and up tested on Ubuntu 16.04 and MacOS 10.13)
-- Additional requirement to run NeuroGFX
-  - [NVIDIA GPU Driver](https://www.nvidia.com/drivers) Version 384 or up
-  - [NVIDIA Container Runtime](https://github.com/NVIDIA/nvidia-container-runtime)
 - To launch applications on Amazon Web Services (AWS) EC2 instances:
   - An Amazon Machine Image is provided. Details can be found under this [guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance).
 
@@ -40,19 +35,18 @@ Assuming that you have the prerequisites installed, we cover here the basic usag
 the case when services run on a single machine with default configuration.
 The typical install time is approximately the time for your computer to download 12 GB of docker images.
 
-#### Cloning This Repository
+#### Cloning This Repository and Checkout `hemibrain` Branch
 
 The first step to install FFBO is to clone this repository to the machine(s) where you will run FFBO.
 We will utilize `docker-compose.yml` in this repository to automatically pull down all docker images from [Docker Hub](https://hub.docker.com/r/fruitflybrain/).
 
-If you are using the provided Amazon Machine Image on AWS EC2, the repository has already been clone. Please pull the latest version in order to stay updated.
+If you are using the provided Amazon Machine Image on AWS EC2, the repository has already been clone. Please pull the latest version and checkout the `hemibrain` branch in order to stay updated.
 
 #### Service Names
 Here, the name of the services are
 - ffbo.processor: service hosting Processor
 - ffbo.neuroarch_component: service hosting NeuroArch component
 - ffbo.nlp_component: service hosting NLP component
-- ffbo.neurokernel_component: service hosting Neurokernel component
 
 #### Installing Docker Images
 This repository utilizes prebuilt images from Docker Hub. Before running the application,
@@ -64,9 +58,9 @@ and for specific services using
     
     docker-compose pull [SERVICE...]
     
-The entire set of images is about 12 GB, so depending on your network speed,
+The entire set of images is about 30 GB, so depending on your network speed,
 it will take some time to download all of them.
-Once they are done, you should find the following 4 docker images in your system.
+Once they are done, you should find the following 3 docker images in your system.
 
 ![result of `docker-compose pull`](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
 
@@ -89,14 +83,13 @@ To run services in the background and suppress outputs:
     
 Once all services created, wait for 1 minute. Then, you can start using
 - NeuroNLP at: http://localhost:8081 (You can expect the same website as https://neuronlp.fruitflybrain.org. A list of demos can be launched by Get Started -> Demos.)
-- NeuroGFX at: http://localhost:8082 (You can expect the same website as https://neurogfx.fruitflybrain.org. A tutorial video is available by clicking NeuroGFX on the top left.)
 
 If you are not running services on your localhost, replace "localhost" with
 the IP of the machine that you are running the (ffbo.processor) service.
 For example, if you are running on an Amazon Web Service EC2 instance, 
 replace "localhost" with the *public* IP of the instance.
 
-If the system is properly started, you should see "nlp", "nk" and "na" servers fully
+If the system is properly started, you should see "nlp", and "na" servers fully
 populated with a number and name, similar to the following:
 
 !["result of `docker-compose up`"](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/up.jpg "result of `docker-compose up`")
@@ -156,8 +149,8 @@ Please refer to our Wiki pages for more advance machine setup:
    -  [Running All Services on a Single Machine](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Machine)
    -  [Running Services on Multiple Machines](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-Machines)
 -  Amazon Web Services (Using Amazon Machine Images)
-   -  [Running All Services on a Single EC2 Instance](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance)
-   -  [Running Services on Multiple EC2 Instances](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-EC2-Instances)
+   -  [Running All Services on a Single EC2 Instance](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain` branch)
+   -  [Running Services on Multiple EC2 Instances](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-EC2-Instances) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain` branch)
 
 ## <a name="requirement_install"></a>Prerequisites Installation
 
@@ -184,13 +177,6 @@ This section provides documentation on installation and setup for required softw
   -  [Official Installation Documentation](https://docs.docker.com/compose/install/#install-compose)
 - Mac
   -  Included in Docker installation.
-
-### NVIDIA Container Runtime Setup
-- Ubuntu
-  -  Script: `sh scripts/nvidia-setup-ubuntu.sh`
-  -  [Guide](https://github.com/fruitflybrain/ffbo.launcher/wiki/NVIDIA-Runtime-Setup-for-Ubuntu)
-- Mac ([NVIDIA Runtime](https://github.com/NVIDIA/nvidia-container-runtime) has no support for MacOS)
-<!--- Windows ([NVIDIA Runtime](https://github.com/NVIDIA/nvidia-container-runtime) has no support for Windows)-->
 
 
 ## Licenses of Data in FFBO
