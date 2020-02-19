@@ -1,4 +1,4 @@
-# FFBO Launcher for [Hemibrain-v1.0.1](https://www.janelia.org/project-team/flyem/hemibrain).
+# FFBO Launcher for [Hemibrain-v1.0.1](https://www.janelia.org/project-team/flyem/hemibrain)
 
 This repository consists of a set of tools that can be used to automate installation and launch components required by the standalone tools of the [Fruit Fly Brain Observatory](http://fruitflybrain.org) (FFBO):
 * [NeuroNLP](https://neuronlp.fruitflybrain.org): a natural language portal for aggregated fruit fly data.
