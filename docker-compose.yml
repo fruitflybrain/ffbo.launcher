@@ -60,7 +60,7 @@ services:
               target: /config
             - type: bind
               source: /change/to/source/directory/of/na_server
-              target: /opt/orientdb/database/na_server
+              target: /opt/orientdb/databases/na_server
         networks:
             - ffbonet
         environment:
