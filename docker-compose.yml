@@ -1,8 +1,29 @@
+## Instruction:
+# Things you must do:
+# 1. Download the database dump using download_database.sh
+# 2. Change the source directory name in ffbo.neuroarch_component source binding
+# - ffbo.neuroarch_component:
+#       volumes:
+#        - type: bind
+#          source: /change/to/source/directory/of/na_server  <----
+# 3. If you change the port numbers in config.ini, change them here, too.
+# - ffbo.processor:
+#        ports:
+#            - target: 8081  <---- port must match NLP port in config.ini
+#              published: 8081   <---- port must match NLP expose_port in config.ini
+#            - target: 8082  <---- port must match GFX port in config.ini
+#              published: 8082   <---- port must match GFX expose_port in config.ini
+#
+# Things you can change:
+# - ffbo.neuroarch_component:
+#      environment:
+#          - ORIENTDB_OPTS_MEMORY=-Xms16G -Xmx16G   <---- change the JAVA heap memory size -Xms initial memory, -Xmx maxmimum memory
+
 version: "3.3"
 services:
     ffbo.processor:
         container_name: ffbo.processor
-        image: fruitflybrain/ffbo.processor:hemibrain
+        image: fruitflybrain/ffbo.processor:hemibrain_vnc
         ports:
             - target: 8081
               published: 8081
@@ -21,7 +42,7 @@ services:
             - ffbonet
     ffbo.nlp_component:
         container_name: ffbo.nlp_component
-        image: fruitflybrain/ffbo.nlp_component:hemibrain
+        image: fruitflybrain/ffbo.nlp_component:hemibrain_vnc
         tty: true
         volumes:
             - type: bind
@@ -31,12 +52,15 @@ services:
             - ffbonet
     ffbo.neuroarch_component:
         container_name: ffbo.neuroarch_component
-        image: fruitflybrain/ffbo.neuroarch_component:hemibrain
+        image: fruitflybrain/ffbo.neuroarch_component:hemibrain_vnc
         tty: true
         volumes:
             - type: bind
               source: .
               target: /config
+            - type: bind
+              source: /change/to/source/directory/of/na_server
+              target: /opt/orientdb/database/na_server
         networks:
             - ffbonet
         environment:
