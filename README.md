@@ -37,12 +37,12 @@ Assuming that you have the prerequisites installed, we cover here the basic usag
 the case when services run on a single machine with default configuration.
 The typical install time is approximately the time for your computer to download 12 GB of docker images.
 
-#### Cloning This Repository and Checkout `hemibrain` Branch
+#### Cloning This Repository and Checkout `hemibrain_vnc` Branch
 
 The first step to install FFBO is to clone this repository to the machine(s) where you will run FFBO.
 We will utilize `docker-compose.yml` in this repository to automatically pull down all docker images from [Docker Hub](https://hub.docker.com/r/fruitflybrain/).
 
-If you are using the provided Amazon Machine Image on AWS EC2, the repository has already been clone. Please pull the latest version and checkout the `hemibrain` branch in order to stay updated.
+If you are using the provided Amazon Machine Image on AWS EC2, the repository has already been clone. Please pull the latest version and checkout the `hemibrain_vnc` branch in order to stay updated.
 
 #### Service Names
 Here, the name of the services are
@@ -67,6 +67,11 @@ Once they are done, you should find the following 3 docker images in your system
 ![result of `docker-compose pull`](https://raw.githubusercontent.com/fruitflybrain/ffbo.launcher/images/images/pull.jpg "result of `docker-compose pull`")
 
 You can also use this command to update to the latest docker images on Docker Hub.
+
+#### Download Database
+
+Run `script/download_database.sh` to download a copy of the database into your local folder.
+Then, edit `docker-compose.yml` and follow instructions inside to change the volume binding for `ffbo.neuroarch_component` such that the source directory points to where the database is.
 
 #### Starting Services
 __Note for MAC Users:__ If you have removed default Docker shared folders, you need to add this folder into Docker's file sharing directories in Docker Preferences. After you have started your local Docker Daemon, navigate to the Docker icon in the top right corner of the desktop. Click and navigate down to "Preference -> File Sharing". Click the "+" button. Navigate to and select this directory. Click "Apply & Restart". For reference, see https://www.youtube.com/watch?v=0j5RnprSBAk.
@@ -151,8 +156,8 @@ Please refer to our Wiki pages for more advance machine setup:
    -  [Running All Services on a Single Machine](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Machine)
    -  [Running Services on Multiple Machines](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-Machines)
 -  Amazon Web Services (Using Amazon Machine Images)
-   -  [Running All Services on a Single EC2 Instance](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain` branch)
-   -  [Running Services on Multiple EC2 Instances](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-EC2-Instances) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain` branch)
+   -  [Running All Services on a Single EC2 Instance](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-All-Services-on-a-Single-Amazon-Web-Service-EC2-Instance) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain_vnc` branch)
+   -  [Running Services on Multiple EC2 Instances](https://github.com/fruitflybrain/ffbo.launcher/wiki/Running-Services-on-Multiple-EC2-Instances) (Please remember to pull the ffbo.launcher respository and switch to the `hemibrain_vnc` branch)
 
 ## <a name="requirement_install"></a>Prerequisites Installation
 
